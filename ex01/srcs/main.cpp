@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.Class.hpp                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 11:09:01 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/06/07 14:38:40 by nbardavi         ###   ########.fr       */
+/*   Created: 2024/04/29 09:57:35 by nbardavi          #+#    #+#             */
+/*   Updated: 2024/06/07 14:37:00 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BTC_CLASS_HPP
-# define BTC_CLASS_HPP
-
+#include "../include/colors.h"
 #include <string>
 #include <iostream>
-#include <vector>
 
-void checkInput(const std::string& filename, std::vector<std::pair<std::string, double> > file_data);
-std::vector<std::pair<std::string, double> > readFile(const std::string& filename);
 
-#endif
+int main(int argc, char **argv){
+	
+	if (argc != 2){
+		std::cerr << RED << "Usage: ./btc <input>" << RESET << std::endl;
+		return(false);
+	}
+	RPM(argv[1]);
+	return 0;
+}
